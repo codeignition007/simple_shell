@@ -1,0 +1,33 @@
+import AUTHORS from "./simple_shell/AUTHORS"
+
+
+
+export default function AUTHORS(){
+	const Author = AUTHORS.map(Author => {
+
+	return (
+	
+	<>
+	<p>This file list the contributors to this project </p>
+
+	<Author
+	id={1}
+	name={Adeoye johnson}
+	email={johnsonadeoye888@gmail.com}
+	github username={codeignition007}
+        twitterHandle={@thatadobeguy}
+	/>
+
+	<Author
+	id={2}
+	name={Olawumi Damilola}
+	email={glam4damsel@yahoo.com}
+        github username={Deami2023}
+	twitterHandle={@mzdeami}
+	/>
+
+	< />
+	)}
+
+	}) 
+
