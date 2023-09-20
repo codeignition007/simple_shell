@@ -47,7 +47,7 @@ int my_setenv(info_t *info)
 		return (1);
 	}
 	/* Set the environment variable */
-	if (set_env(info, info->argv[1], info->argv[2]))
+	if (my_setenv(info, info->argv[1], info->argv[2]))
 		return (0);
 	return (1);
 }
@@ -70,7 +70,7 @@ int my_unsetenv(info_t *info)
 
 	/* Unset the specified environment variables */
 	for (i = 1; i <= info->argc; i++)
-		unset_env(info, info->argv[i]);
+		my_unsetenv(info, info->argv[i]);
 	return (0);
 }
 
