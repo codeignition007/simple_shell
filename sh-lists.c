@@ -10,12 +10,15 @@
 sep_list *add_sep_node_end(sep_list **head, char sep)
 {
 	sep_list *new, *temp;
+
 	new = malloc(sizeof(sep_list));
 	if (new == NULL)
 		return (NULL);
+
 	new->separator = sep;
 	new->next = NULL;
 	temp = *head;
+
 	if (temp == NULL)
 	{
 		*head = new;
@@ -26,6 +29,7 @@ sep_list *add_sep_node_end(sep_list **head, char sep)
 			temp = temp->next;
 		temp->next = new;
 	}
+
 	return (*head);
 }
 
@@ -39,6 +43,7 @@ void free_sep_list(sep_list **head)
 {
 	sep_list *temp;
 	sep_list *curr;
+
 	if (head != NULL)
 	{
 		curr = *head;
@@ -61,12 +66,15 @@ void free_sep_list(sep_list **head)
 line_list *add_line_node_end(line_list **head, char *line)
 {
 	line_list *new, *temp;
+
 	new = malloc(sizeof(line_list));
 	if (new == NULL)
 		return (NULL);
+
 	new->line = line;
 	new->next = NULL;
 	temp = *head;
+
 	if (temp == NULL)
 	{
 		*head = new;
@@ -77,6 +85,7 @@ line_list *add_line_node_end(line_list **head, char *line)
 			temp = temp->next;
 		temp->next = new;
 	}
+
 	return (*head);
 }
 
@@ -102,3 +111,5 @@ void free_line_list(line_list **head)
 		*head = NULL;
 	}
 }
+
+

@@ -18,6 +18,7 @@ int cmp_env_name(const char *nenv, const char *name)
 			return (0);
 		}
 	}
+
 	return (i + 1);
 }
 
@@ -33,9 +34,11 @@ char *_getenv(const char *name, char **_environ)
 {
 	char *ptr_env;
 	int i, mov;
+
 	/* Initialize ptr_env to NULL */
 	ptr_env = NULL;
 	mov = 0;
+
 	/* Loop through environment variables */
 	for (i = 0; _environ[i]; i++)
 	{
@@ -46,6 +49,7 @@ char *_getenv(const char *name, char **_environ)
 			break;
 		}
 	}
+
 	return (ptr_env + mov);
 }
 
@@ -62,13 +66,16 @@ int _env(data_shell *datash)
 	for (i = 0; datash->_environ[i]; i++)
 	{
 		/* Calculate the length of the environment variable */
-
-	for (j = 0; datash->_environ[i][j]; j++);
+		for (j = 0; datash->_environ[i][j]; j++)
+			;
 
 		/* Write the environment variable to standard output */
 		write(STDOUT_FILENO, datash->_environ[i], j);
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	datash->status = 0;
+
 	return (1);
 }
+
+
