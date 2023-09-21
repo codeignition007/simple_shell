@@ -180,7 +180,7 @@ void cd_to_home(data_shell *datash);
 int cd_shell(data_shell *datash);
 
 /* sh-builtin.c */
-int (*get_builtin(char *cmd))(data_shell *datash)
+int (*get_builtin(char *cmd))(data_shell *);
        
 /* sh-exits.c */
 int exit_shell(data_shell *datash);
